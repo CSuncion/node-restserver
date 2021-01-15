@@ -40,6 +40,7 @@ app.put('/usuario/:id', function(req, res) {
     res.json({
         id
     })
+
 })
 
 app.delete('/usuario', function(req, res) {
