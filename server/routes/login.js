@@ -63,8 +63,6 @@ async function verify(token) {
         //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
     });
     const payload = ticket.getPayload();
-    const userid = payload['sub'];
-
     return {
         nombre: payload.name,
         email: payload.email,
@@ -99,7 +97,7 @@ app.post('/google', async(req, res) => {
                 return res.status(400).json({
                     ok: false,
                     err: {
-                        message: 'Debe usar su atunticacion normal'
+                        message: 'Debe usar su autenticacion normal'
                     }
                 });
             } else {
@@ -136,9 +134,9 @@ app.post('/google', async(req, res) => {
                     ok: true,
                     usuario: usuarioDB,
                     token
-                })
+                });
 
-            })
+            });
         }
 
     });
