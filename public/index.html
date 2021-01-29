@@ -10,23 +10,26 @@
 </head>
 
 <body>
+
+    <!-- <img src="http://localhost:3000/imagen/usuarios/6002699b131a783730702698-816.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InJvbGUiOiJBRE1JTl9ST0xFIiwiZXN0YWRvIjp0cnVlLCJnb29nbGUiOmZhbHNlLCJfaWQiOiI2MDA0ZWJjODI4Y2QxNjY4YjQ4YTJhZTEiLCJub21icmUiOiJUZXN0IDEiLCJlbWFpbCI6InRlc3QyQG91dGxvb2suY29tIiwiX192IjowfSwiaWF0IjoxNjExNzg5MDQ3LCJleHAiOjE2MTE5NjE4NDd9.HDB6R22CWXwGfJX90LT7H4gyyZyyYTlbYTWgSHrgugU"        alt=""> -->
+
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="#" onclick="signOut();">Sign out</a>
     <script>
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log(' ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email ' scope is not present.
 
             var id_token = googleUser.getAuthResponse().id_token;
 
             console.log(id_token);
 
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/google');
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.open('POST ', '/google ');
+            xhr.setRequestHeader('Content-Type ', 'application/x-www-form-urlencoded ');
             xhr.onload = function() {
                 console.log('Signed in as: ' + xhr.responseText);
             };
@@ -37,7 +40,7 @@
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function() {
-                console.log('User signed out.');
+                console.log(' User signed out. ');
             });
         }
     </script>
